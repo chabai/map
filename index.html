@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="description" content="里斯本“淘瓷”攻略">
+	<title>里斯本“淘瓷”攻略</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+<body>
+	<div id="container">
+		<img src="images/bg.jpg" class="imgStyle" alt="">
+		<img src="images/1.png" class="img1" alt="">
+		<img src="images/2.png" class="img2" alt="">
+		<img src="images/3.png" class="img3" alt="">
+		<img src="images/4.png" class="img4" alt="">
+		<img src="images/5.png" class="img5" alt="">
+		<img src="images/6.png" class="img6" alt="">
+		<img src="images/7.png" class="img7" alt="">
+		<img src="images/8.png" class="img8" alt="">
+		<div id="bg"></div>
+		<div id="popup">
+			<img src="" class="imgStyle" >
+			<img src="" class="imgStyle" onclick="openHtml(event);" >
+			<img src="images/close.png" alt="" class="close"></div>
+		<p class="pos1"> <i class="circle_bot"></i> <i class="circle_mid"></i>
+		</p>
+		<p class="pos2">
+			<i class="circle_bot"></i>
+			<i class="circle_mid"></i>
+		</p>
+		<p class="pos3">
+			<i class="circle_bot"></i>
+			<i class="circle_mid"></i>
+		</p>
+		<p class="pos4">
+			<i class="circle_bot"></i>
+			<i class="circle_mid"></i>
+		</p>
+		<p class="pos5">
+			<i class="circle_bot"></i>
+			<i class="circle_mid"></i>
+		</p>
+		<p class="pos6">
+			<i class="circle_bot"></i>
+			<i class="circle_mid"></i>
+		</p>
+		<p class="pos7">
+			<i class="circle_bot"></i>
+			<i class="circle_mid"></i>
+		</p>
+		<p class="pos8">
+			<i class="circle_bot"></i>
+			<i class="circle_mid"></i>
+		</p>
+	</div>
+</body>
+	<script src="http://share.houpix.com/commonfiles/zhuanti/js/common.js"></script>
+	<script>
+	    var $$ = function(func){  
+            if (document.addEventListener) {  
+                window.addEventListener("load", func, false);  
+            }  
+            else if (document.attachEvent) {  
+                window.attachEvent("onload", func);  
+            }  
+        }  
+          
+        $$(function(){  
+            show();
+        }) 
+        var oDiv=document.getElementById('container');
+			var oBg=document.getElementById('bg');
+			var oPop=document.getElementById('popup');
+			var aImgs=oPop.getElementsByTagName('img');
+			var aa=oPop.getElementsByTagName("a")[0];
+			var aImg=oDiv.getElementsByTagName('img');
+         function show(){
+			for(var i=1;i<9;i++){
+				aImg[i].index=i;
+				aImg[i].onclick=function(){
+					for(var i=0;i<aImgs.length-1;i++){
+						aImgs[i].src="http://www.houpix.com/theme/2016/04/map/images/"+this.index+i+".jpg";
+					}
+					oBg.style.display="block";
+					oPop.style.display="block";
+					event.stopPropagation();
+			    }
+			}
+			aImgs[0].onclick=function(){
+				oBg.style.display="none";
+			    oPop.style.display="none";
+			    event.stopPropagation();
+			}
+			aImgs[2].onclick=function(){
+				oBg.style.display="none";
+			    oPop.style.display="none";
+			    event.stopPropagation();
+		   }
+	    }
+	    function openHtml(event) {
+	    	var arr=new Array(4598,4497,4512,4511,4496,3989,3758,3604);
+	    	var str=aImgs[0].src;
+	    	var num=aImgs[0].src.substring(47,48);
+	    	if (navigator.userAgent.indexOf("houpixapp") > 0) {
+				window.location = "houpixapp://topic/"+arr[num-1];
+			}else{
+				window.location = "http://share.houpix.com/topic/"+arr[num-1];
+			}
+	      event.stopPropagation();
+	    }
+	</script></html>
